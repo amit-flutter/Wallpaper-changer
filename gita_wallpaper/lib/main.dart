@@ -89,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
       await _changeWallpaper();
     });
 
-    print('Auto-change started - changes every 5 minutes');
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Auto-change enabled (every 5 minutes)')),
     );
@@ -98,7 +97,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void _stopAutoChange() {
     _autoChangeTimer?.cancel();
     _autoChangeTimer = null;
-    print('Auto-change stopped');
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Auto-change disabled')),
     );
@@ -144,7 +142,6 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       }
     } catch (e) {
-      print('Error changing wallpaper: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Error: ${e.toString()}')),

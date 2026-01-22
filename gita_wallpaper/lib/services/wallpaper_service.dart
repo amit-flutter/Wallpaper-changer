@@ -31,13 +31,13 @@ class WallpaperService {
       await file.writeAsBytes(byteData.buffer.asUint8List());
 
       // Set as wallpaper
-      final result = await WallpaperManagerFlutter.setWallpapeImage(
+      final result = await WallpaperManagerFlutter.setWallpaperImage(
         imagePath: file.path,
-        wallpaperLocation: WallpaperManagerFlutter.WALLPAPER_SYSTEM,
       );
 
       return result ?? false;
     } catch (e) {
+      // ignore: avoid_print
       print('Error setting wallpaper: $e');
       return false;
     }
@@ -75,13 +75,13 @@ class WallpaperService {
       await file.writeAsBytes(byteData.buffer.asUint8List());
 
       // Set as wallpaper
-      final result = await WallpaperManagerFlutter.setWallpapeImage(
+      final result = await WallpaperManagerFlutter.setWallpaperImage(
         imagePath: file.path,
-        wallpaperLocation: WallpaperManagerFlutter.WALLPAPER_SYSTEM,
       );
 
       return result ?? false;
     } catch (e) {
+      // ignore: avoid_print
       print('Error setting wallpaper: $e');
       return false;
     }

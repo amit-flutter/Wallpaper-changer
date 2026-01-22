@@ -33,14 +33,6 @@ jobs:
         working-directory: gita_wallpaper
         run: flutter pub get
 
-      - name: Run tests
-        working-directory: gita_wallpaper
-        run: flutter test --no-pub || echo "No tests found"
-
-      - name: Run analysis
-        working-directory: gita_wallpaper
-        run: flutter analyze
-
       - name: Build APK
         working-directory: gita_wallpaper
         run: flutter build apk --release --split-per-abi

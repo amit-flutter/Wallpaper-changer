@@ -6,10 +6,10 @@ class WallpaperPreview extends StatelessWidget {
   final GlobalKey wallpaperKey;
 
   const WallpaperPreview({
-    Key? key,
+    super.key,
     required this.quote,
     required this.wallpaperKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
