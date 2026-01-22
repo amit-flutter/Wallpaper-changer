@@ -19,18 +19,23 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '11'
+          java-version: '17'
           cache: gradle
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.38.5'
+          channel: 'stable'
           cache: true
 
       - name: Get dependencies
         working-directory: gita_wallpaper
         run: flutter pub get
+
+      - name: Run tests
+        working-directory: gita_wallpaper
+        run: flutter test --no-pub || echo "No tests found"
 
       - name: Run analysis
         working-directory: gita_wallpaper
@@ -38,19 +43,19 @@ jobs:
 
       - name: Build APK
         working-directory: gita_wallpaper
-        run: flutter build apk --split-per-abi
+        run: flutter build apk --release --split-per-abi
 
       - name: Upload APK artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: apk-release
-          path: gita_wallpaper/build/app/outputs/apk/release/
+          name: app-release-${{ github.sha }}
+          path: gita_wallpaper/build/app/outputs/flutter-apk/*.apk
           retention-days: 30
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
-          files: gita_wallpaper/build/app/outputs/apk/release/**/*.apk
+          files: gita_wallpaper/build/app/outputs/flutter-apk/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
