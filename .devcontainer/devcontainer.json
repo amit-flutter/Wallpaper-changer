@@ -1,0 +1,21 @@
+{
+  "name": "Flutter & Gita Wallpaper",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code",
+        "cs50.ddb",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "root"
+}

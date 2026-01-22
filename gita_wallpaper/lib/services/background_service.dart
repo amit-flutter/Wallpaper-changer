@@ -32,7 +32,7 @@ class BackgroundService {
       'changeWallpaper',
       'changeWallpaperTask',
       frequency: const Duration(minutes: 5),
-      constraints: const Constraints(
+      constraints: Constraints(
         networkType: NetworkType.connected,
       ),
       backoffPolicy: BackoffPolicy.exponential,

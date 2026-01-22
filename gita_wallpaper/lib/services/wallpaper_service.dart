@@ -30,12 +30,13 @@ class WallpaperService {
       final file = File('$_cacheDir/$fileName');
       await file.writeAsBytes(byteData.buffer.asUint8List());
 
-      // Set as wallpaper
-      final result = await WallpaperManagerFlutter.setWallpaperImage(
-        imagePath: file.path,
+      // Set as wallpaper (homeScreen = 1)
+      final result = await WallpaperManagerFlutter().setWallpaper(
+        file,
+        WallpaperManagerFlutter.homeScreen,
       );
 
-      return result ?? false;
+      return result;
     } catch (e) {
       // ignore: avoid_print
       print('Error setting wallpaper: $e');
@@ -74,12 +75,13 @@ class WallpaperService {
       final file = File('$_cacheDir/$fileName');
       await file.writeAsBytes(byteData.buffer.asUint8List());
 
-      // Set as wallpaper
-      final result = await WallpaperManagerFlutter.setWallpaperImage(
-        imagePath: file.path,
+      // Set as wallpaper (homeScreen = 1)
+      final result = await WallpaperManagerFlutter().setWallpaper(
+        file,
+        WallpaperManagerFlutter.homeScreen,
       );
 
-      return result ?? false;
+      return result;
     } catch (e) {
       // ignore: avoid_print
       print('Error setting wallpaper: $e');
