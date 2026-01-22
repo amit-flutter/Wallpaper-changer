@@ -38,7 +38,7 @@ class WallpaperPreview extends StatelessWidget {
                 height: 200,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.purple.withOpacity(0.1),
+                  color: Colors.purple.withValues(alpha: 0.1),
                 ),
               ),
             ),
@@ -50,7 +50,7 @@ class WallpaperPreview extends StatelessWidget {
                 height: 300,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.indigo.withOpacity(0.1),
+                  color: Colors.indigo.withValues(alpha: 0.1),
                 ),
               ),
             ),
@@ -71,7 +71,7 @@ class WallpaperPreview extends StatelessWidget {
                         color: Colors.amber.shade300,
                         width: 3,
                       ),
-                      color: Colors.amber.shade100.withOpacity(0.2),
+                      color: Colors.amber.shade100.withValues(alpha: 0.2),
                     ),
                     child: Icon(
                       Icons.auto_awesome,
@@ -91,7 +91,7 @@ class WallpaperPreview extends StatelessWidget {
                           height: 1.4,
                           shadows: [
                             Shadow(
-                              color: Colors.black.withOpacity(0.5),
+                              color: Colors.black.withValues(alpha: 0.5),
                               blurRadius: 4,
                               offset: const Offset(2, 2),
                             ),
@@ -106,10 +106,10 @@ class WallpaperPreview extends StatelessWidget {
                       vertical: 12,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.amber.shade100.withOpacity(0.15),
+                      color: Colors.amber.shade100.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: Colors.amber.shade300.withOpacity(0.3),
+                        color: Colors.amber.shade300.withValues(alpha: 0.3),
                         width: 2,
                       ),
                     ),

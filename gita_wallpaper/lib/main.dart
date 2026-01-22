@@ -3,7 +3,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:gita_wallpaper/services/gita_service.dart';
 import 'package:gita_wallpaper/services/wallpaper_service.dart';
-import 'package:gita_wallpaper/services/background_service.dart';
 import 'package:gita_wallpaper/models/gita_quote.dart';
 import 'package:gita_wallpaper/widgets/wallpaper_preview.dart';
 import 'dart:async';
@@ -223,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withValues(alpha: 0.1),
                         blurRadius: 10,
                         offset: const Offset(0, 5),
                       ),
